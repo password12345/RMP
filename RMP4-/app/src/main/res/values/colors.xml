@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="neonOrange">#FFFF6700</color>
+    <color name="red_tree">#FFC04000</color>
+    <color name="melon">#FFF4A900</color>
+    <color name="transport">#FFF54021</color>
+</resources>
