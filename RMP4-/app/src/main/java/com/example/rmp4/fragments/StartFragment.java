@@ -1,4 +1,4 @@
-package com.example.rmp4;
+package com.example.rmp4.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+
+import com.example.rmp4.R;
 
 public class StartFragment extends Fragment {
 
@@ -18,27 +21,31 @@ public class StartFragment extends Fragment {
         view.findViewById(R.id.toListFragment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requireActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container_view, new ListFragment())
-                        .addToBackStack(null)
-                        .commit();
+                Bundle bundle = new Bundle();
+                String result = "Данные, переданные из StartFragment в ListFragment";
+                bundle.putString("listKey", result);
+                Navigation.findNavController(v).navigate(R.id.from_start_to_list, bundle);
             }
         });
 
         view.findViewById(R.id.toRecyclerFragment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requireActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container_view, new RecyclerFragment())
-                        .addToBackStack(null)
-                        .commit();
+                Bundle bundle = new Bundle();
+                String result = "Данные, переданные из StartFragment в RecyclerFragment";
+                bundle.putString("recyclerKey", result);
+                Navigation.findNavController(v).navigate(R.id.from_start_to_recycler, bundle);
             }
         });
 
         return view;
     }
 }
+
+
+
+
+
+
+
+
